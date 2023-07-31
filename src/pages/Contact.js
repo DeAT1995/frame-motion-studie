@@ -1,9 +1,18 @@
 import Card from 'react-bootstrap/Card';
+import { motion } from 'framer-motion';
+
 
 
 function Contact() {
     return (
-      <div className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
+      <motion.div
+      initial={{ x: 1000 }}
+      animate={{ x: 0 }}
+      exit={{ x: window.innerWidth }}
+
+      >
+      <motion.div animate={{ rotate: 360 }}  transition={{ duration: 3, type: 'spring', bounce: 0.2 }}
+      className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
       <Card style={{ width: '18rem' }} className="mx-auto">
       <Card.Body >
         <Card.Title className="d-flex justify-content-center align-items-center">Contact Us</Card.Title>
@@ -21,7 +30,8 @@ function Contact() {
         </ul>
       </Card.Body>
     </Card>
-    </div>
+    </motion.div>
+    </motion.div>
     );
   }
   

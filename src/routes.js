@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes , Route } from "react-router-dom";
+import { Routes , Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
@@ -11,11 +11,11 @@ function RoutesApp(){
     const location = useLocation()
     return(
         <AnimatePresence>
-        <Navbar/>
-        <Routes location={location} key={location.pathname}>
-            <Route path="/Home" exact component={Home}/>
-            <Route path="/Contact" exact component={Contact}/>
-        </Routes>
+            <Navbar/>
+                <Routes location={location} key={location.pathname}>
+                     <Route path="/Home" element={<Home/>} exact />
+                     <Route path="/Contact"  element={<Contact/>} exact/>
+                </Routes>
         </AnimatePresence>
     )
 };

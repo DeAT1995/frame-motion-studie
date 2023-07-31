@@ -1,8 +1,15 @@
 import Card from 'react-bootstrap/Card';
+import { motion } from 'framer-motion';
+
 
 
 function Home() {
     return (
+      <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: -window.innerWidth }}
+      >
       <div className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
       <Card style={{ width: '40rem' }} className="mx-auto">
       <Card.Body >
@@ -15,6 +22,7 @@ function Home() {
       </Card.Body>
     </Card>
     </div>
+    </motion.div>
     );
   }
   
